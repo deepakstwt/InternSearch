@@ -23,6 +23,15 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
 
@@ -140,10 +149,19 @@ function App() {
     }`}>
 
 
-      <div className="sticky top-0 z-50 w-full">
-        <header className={`mx-auto flex items-center justify-between max-w-full w-full px-4 sm:px-8 md:px-10 py-3.5 sm:py-5 backdrop-blur-md border-b ${
-          isDark ? 'bg-[#080B11]/90 border-white/[0.04]' : 'bg-[#F4F6FA]/95 border-black/[0.06]'
-        }`}>
+      <div className="sticky top-0 z-50 w-full transition-all duration-300">
+        <header className={scrolled
+          ? `mx-auto flex justify-between items-center max-w-4xl w-[92%] sm:w-[90%] px-5 sm:px-6 py-2.5 mt-3 sm:mt-4 rounded-full border shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-md transition-all duration-300 ${
+              isDark 
+                ? 'bg-slate-950/80 border-white/10 shadow-black/40 text-white' 
+                : 'bg-white/85 border-gray-200/80 text-gray-900'
+            }`
+          : `mx-auto flex justify-between items-center max-w-full w-full px-4 sm:px-8 md:px-10 py-4 sm:py-5 border-b backdrop-blur-md transition-all duration-300 ${
+              isDark 
+                ? 'bg-[#080B11]/90 border-white/[0.04] text-white' 
+                : 'bg-[#F4F6FA]/90 border-black/[0.06] text-gray-900'
+            }`
+        }>
           <div onClick={() => setView('landing')} className="flex items-center gap-1.5 sm:gap-2 cursor-pointer select-none">
             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#007AFF] flex items-center justify-center shadow-md">
               <span className="text-white text-[10px] sm:text-xs font-black">IS</span>
