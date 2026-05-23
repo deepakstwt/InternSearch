@@ -171,8 +171,8 @@ function App() {
         </header>
       </div>
 
-      <main className="flex-grow max-w-7xl w-full mx-auto px-4 py-4 sm:py-8 relative z-10">
-        <div className="grid grid-cols-12 gap-4 sm:gap-6">
+      <main className="flex-grow max-w-7xl w-full mx-auto px-4 py-4 md:py-6 relative z-10">
+        <div className="grid grid-cols-12 gap-4 md:gap-5">
           <div className="col-span-12 lg:col-span-3 lg:sticky lg:top-[100px] lg:self-start">
             <FilterSidebar
               filters={filters}
@@ -182,7 +182,7 @@ function App() {
               internships={internships}
             />
           </div>
-          <div className="col-span-12 lg:col-span-9 space-y-4 sm:space-y-6">
+          <div className="col-span-12 lg:col-span-9 space-y-4 md:space-y-5">
             {!loading && !error && filteredInternships.length > 0 && (
               <StatsGrid stats={stats} />
             )}
