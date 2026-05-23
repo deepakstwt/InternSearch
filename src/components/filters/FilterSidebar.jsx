@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter, RotateCcw, X, Check } from 'lucide-react';
+import { Filter, RotateCcw, X, Check, ChevronDown } from 'lucide-react';
 
 const FilterSidebar = ({ filters, onFilterChange, onClearFilters, isDark, internships = [] }) => {
   const { profile = [], location, duration, stipend } = filters;
@@ -236,16 +236,21 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, isDark, intern
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="duration" className={`text-[10px] font-bold uppercase tracking-widest ${label}`}>Duration (Months)</label>
-        <select
-          id="duration" name="duration" value={duration} onChange={handleInputChange}
-          className={`w-full px-4 py-2.5 rounded-xl text-sm focus:outline-none transition-all duration-200 cursor-pointer border ${input}`}
-        >
-          <option value="">Any Duration</option>
-          <option value="2">2 Months</option>
-          <option value="3">3 Months</option>
-          <option value="4">4 Months</option>
-          <option value="6">6 Months</option>
-        </select>
+        <div className="relative w-full">
+          <select
+            id="duration" name="duration" value={duration} onChange={handleInputChange}
+            className={`appearance-none w-full pl-4 pr-10 py-2.5 rounded-xl text-sm focus:outline-none transition-all duration-200 cursor-pointer border ${input}`}
+          >
+            <option value="">Any Duration</option>
+            <option value="2">2 Months</option>
+            <option value="3">3 Months</option>
+            <option value="4">4 Months</option>
+            <option value="6">6 Months</option>
+          </select>
+          <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+            <ChevronDown className="h-4 w-4" />
+          </div>
+        </div>
       </div>
 
 
