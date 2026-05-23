@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ArrowRight, 
+  Search, 
   Filter, 
   Smartphone, 
   ChevronRight,
@@ -96,7 +96,7 @@ const LandingPage = ({ onExplore, stats }) => {
               className="w-full sm:w-auto px-8 py-4 bg-[#007AFF] hover:bg-[#0066D6] text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
             >
               <span>Explore Internships</span>
-              <ArrowRight className="h-4.5 w-4.5" />
+              <ChevronRight className="h-4.5 w-4.5 stroke-[2.5]" />
             </button>
 
 
@@ -119,39 +119,39 @@ const LandingPage = ({ onExplore, stats }) => {
             isDark ? 'bg-slate-900/70 border-white/5' : 'bg-white border-gray-200/80'
           }`}>
             
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 relative z-10">
+            <div className="flex flex-row items-center justify-between relative z-10">
               
 
               <div className="flex flex-col items-center flex-1 text-center">
-                <span className={`text-4xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${isDark ? 'bg-gradient-to-r from-white via-slate-100 to-slate-300' : 'bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500'}`}>
+                <span className={`text-2xl xs:text-3xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${isDark ? 'bg-gradient-to-r from-white via-slate-100 to-slate-300' : 'bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500'}`}>
                   {stats?.total || 0}
                 </span>
-                <span className={`text-[10px] font-bold uppercase tracking-widest mt-2 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Active Roles</span>
+                <span className={`text-[8px] xs:text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mt-1.5 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Active Roles</span>
               </div>
 
 
-              <div className={`hidden md:block w-[1px] h-12 self-center ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
+              <div className={`w-[1px] h-8 sm:h-12 self-center ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
 
 
               <div className="flex flex-col items-center flex-1 text-center">
-                <span className={`text-4xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${isDark ? 'bg-gradient-to-r from-white via-slate-100 to-slate-300' : 'bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500'}`}>
+                <span className={`text-2xl xs:text-3xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${isDark ? 'bg-gradient-to-r from-white via-slate-100 to-slate-300' : 'bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500'}`}>
                   {stats?.wfhCount || 0}
                 </span>
-                <span className={`text-[10px] font-bold uppercase tracking-widest mt-2 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Work From Home</span>
+                <span className={`text-[8px] xs:text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mt-1.5 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>Work From Home</span>
               </div>
 
 
-              <div className={`hidden md:block w-[1px] h-12 self-center ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
+              <div className={`w-[1px] h-8 sm:h-12 self-center ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
 
               <div className="flex flex-col items-center flex-1 text-center">
-                <span className={`text-4xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${
+                <span className={`text-2xl xs:text-3xl sm:text-5xl font-black bg-clip-text text-transparent tracking-tight ${
                   isDark 
                     ? 'bg-gradient-to-r from-white via-slate-100 to-slate-300'
                     : 'bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500'
                 }`}>
                   {stats?.uniqueCompanies || 0}
                 </span>
-                <span className={`text-[10px] font-bold uppercase tracking-widest mt-2 ${
+                <span className={`text-[8px] xs:text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mt-1.5 ${
                   isDark ? 'text-gray-400' : 'text-gray-500'
                 }`}>Hiring Brands</span>
               </div>
