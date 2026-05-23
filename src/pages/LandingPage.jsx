@@ -60,7 +60,7 @@ const LandingPage = ({ onExplore, stats }) => {
 
       <main className="flex-grow relative z-10">
         
-        <section className="max-w-5xl mx-auto px-6 pt-28 pb-20 text-center flex flex-col items-center">
+        <section className="max-w-5xl mx-auto px-6 pt-16 sm:pt-28 pb-10 sm:pb-20 text-center flex flex-col items-center">
           
 
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#007AFF] bg-[#007AFF]/10 border border-[#007AFF]/20 rounded-full px-4 py-1.5 uppercase tracking-widest mb-8 select-none">
@@ -114,7 +114,7 @@ const LandingPage = ({ onExplore, stats }) => {
           </div>
         </section>
 
-        <section className="max-w-5xl mx-auto px-4 py-8">
+        <section className="max-w-5xl mx-auto px-4 py-3 sm:py-8">
           <div className={`rounded-2xl border p-8 md:p-10 shadow-md relative overflow-hidden ${
             isDark ? 'bg-slate-900/70 border-white/5' : 'bg-white border-gray-200/80'
           }`}>
@@ -159,9 +159,9 @@ const LandingPage = ({ onExplore, stats }) => {
           </div>
         </section>
 
-        <section id="features" className="max-w-5xl mx-auto px-6 py-28 relative">
+        <section id="features" className="max-w-5xl mx-auto px-6 py-12 sm:py-28 relative">
           
-          <div className="text-center mb-16 flex flex-col items-center">
+          <div className="text-center mb-8 sm:mb-16 flex flex-col items-center">
             <h2 className={`text-3xl sm:text-5xl font-black tracking-tight max-w-xl ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
@@ -237,7 +237,7 @@ const LandingPage = ({ onExplore, stats }) => {
       </main>
 
 
-      <footer className={`border-t py-10 relative z-10 ${
+      <footer className={`border-t py-6 sm:py-10 relative z-10 ${
         isDark ? 'bg-gray-950/60 border-white/[0.05]' : 'bg-white/60 border-black/[0.06]'
       }`}>
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
