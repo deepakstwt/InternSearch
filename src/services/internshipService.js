@@ -1,7 +1,7 @@
 import axios from 'axios';
 import mockInternships from '../data/mockInternships';
 
-const API_URL = 'https://internshala.com/hiring/search';
+const API_URL = import.meta.env.VITE_API_URL || 'https://internshala.com/hiring/search';
 
 const normalizeInternship = (raw) => {
   const id = raw.id || Math.floor(Math.random() * 100000);
