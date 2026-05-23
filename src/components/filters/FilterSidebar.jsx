@@ -25,20 +25,40 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, isDark, intern
   }, []);
 
   const uniqueProfiles = React.useMemo(() => {
-    return [
-      "ReactJS Developer",
+    const predefined = [
+      "Software Developer",
+      "Web Developer",
+      "React Developer",
       "Frontend Developer",
       "Backend Developer",
       "Full Stack Developer",
-      "Python Developer",
-      "Graphic Designer",
-      "Business Development",
-      "Content Writing",
-      "SEO Specialist",
-      "Social Media Marketing",
-      "Financial Analyst"
-    ].sort();
-  }, []);
+      "Data Science Intern",
+      "Product Management Intern"
+    ];
+    
+    const set = new Set(predefined);
+    
+    if (Array.isArray(internships) && internships.length > 0) {
+      internships.forEach(item => {
+        if (item.title) {
+          const cleanTitle = item.title.trim();
+          if (cleanTitle) {
+            set.add(cleanTitle);
+          }
+        }
+        if (Array.isArray(item.skills)) {
+          item.skills.forEach(skill => {
+            const cleanSkill = skill.trim();
+            if (cleanSkill) {
+              set.add(cleanSkill);
+            }
+          });
+        }
+      });
+    }
+    
+    return Array.from(set).sort();
+  }, [internships]);
 
   const uniqueLocations = React.useMemo(() => {
     if (!Array.isArray(internships) || internships.length === 0) return [];
